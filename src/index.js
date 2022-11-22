@@ -1,3 +1,4 @@
+// TODO All commented code can be uncommented as the other services 'go live'. right now they will just produce errors
 // import yelpApiService from "./src/yelp.api.service";
 // import mapsApiService from "./src/maps.api.service";
 // import renderService from "./src/render";
