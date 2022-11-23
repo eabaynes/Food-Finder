@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // TODO All commented code can be uncommented as the other services 'go live'. right now they will just produce errors
 // import yelpApiService from "./src/yelp.api.service";
 // import mapsApiService from "./src/maps.api.service";
@@ -33,3 +34,6 @@ document
 //   local storage: save the location searched using the input as the key and value
 // document.ready: iterate over localstorage keys. generate button for each key with a text value = saveValue
 // on button click, run function = form.submit using text value as the citySearched
+=======
+
+>>>>>>> f5c20b8 (Remove index.js code for merge)
