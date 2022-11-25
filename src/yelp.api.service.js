@@ -6,7 +6,7 @@ const baseURL = `https://cors-anywhere-bg.herokuapp.com/`;
 export default {
   async getRestaurants(citySearched) {
     const response = await fetch(
-      `${baseURL}https://api.yelp.com/v3/businesses/search?location=${citySearched}&limit=50`,
+      `${baseURL}https://api.yelp.com/v3/businesses/search?location=${citySearched}&limit=20`,
       {
         headers: {
           Authorization: `Bearer ${yelpAPI}`,
