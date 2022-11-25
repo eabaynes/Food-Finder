@@ -1,11 +1,12 @@
 const yelpAPI = import.meta.env.VITE_yelpAPI;
 const baseURL = `https://cors-anywhere-bg.herokuapp.com/`;
 
-// TODO: get user input to change location
+// Get user entered city and get restaurants that offer delivery nearby
+// NOTE: Yelp API doesn't have full functionality with less populated cities yet
 export default {
-  async getRestaurants(input) {
+  async getRestaurants(citySearched) {
     const response = await fetch(
-      `${baseURL}https://api.yelp.com/v3/transactions/delivery/search?location=NYC`,
+      `${baseURL}https://api.yelp.com/v3/businesses/search?location=${citySearched}&limit=50`,
       {
         headers: {
           Authorization: `Bearer ${yelpAPI}`,

@@ -1,9 +1,6 @@
-
 // TODO All commented code can be uncommented as the other services 'go live'. right now they will just produce errors
-// import yelpApiService from "./src/yelp.api.service";
+import yelpApiService from "./yelp.api.service";
 // import mapsApiService from "./src/maps.api.service";
-// import renderService from "./src/render";
-
 // import.meta.env.VITE_googleAPI;
 // import.meta.env.VITE_yelpAPI;
 
@@ -20,7 +17,8 @@ document
 
     localStorage.setItem(saveKey, saveValue);
     console.log(localStorage);
-    // const yelpData = await yelpApiService.getLocation(citySearched);
+    const yelpData = await yelpApiService.getRestaurants(citySearched);
+    console.log(yelpData);
 
     // const mapData = await mapsApiService.getLocation(citySearched);
     // renderService.renderList(yelpData)
@@ -34,4 +32,3 @@ document
 //   local storage: save the location searched using the input as the key and value
 // document.ready: iterate over localstorage keys. generate button for each key with a text value = saveValue
 // on button click, run function = form.submit using text value as the citySearched
-
