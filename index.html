@@ -7,36 +7,56 @@
     <link rel="stylesheet" href="./src/style.css" />
     <title>Food Finder</title>
   </head>
-  <body>
-    <header>
+
+  <body class="bg-yellow-100">
+    <header
+      class="bg-gradient-to-r from-amber-500 to-amber-900 p-5 text-center text-5xl font-bold text-white"
+    >
       <h1>Food Finder</h1>
     </header>
-    <main class="">
-      <section>
-        <form>
-          <label for="search">Search</label>
-          <input type="text"
-          id="city" />
-          <button type="submit">Search</button>
-        </form>
-      </section>
-      <h2>Results</h2>
-      <ul></ul>
-      <section></section>
 
+    <main class="flex">
+      <div class="flex flex-col">
+        <section class="m-2 rounded bg-amber-900 p-2">
+          <form>
+            <div class="flex flex-col">
+              <label
+                for="search"
+                class="text-center text-2xl font-semibold text-white"
+                >Find Delivery!</label
+              >
+              <input type="text" id="city" class="" />
+              <button type="submit" class="rounded bg-amber-500 font-semibold">
+                Search
+              </button>
+            </div>
+          </form>
+        </section>
 
-      <section
-        class="m-70 text-9x text-blue-700S border-color mt-6 h-2/5 w-full border-8 bg-orange-300 to-black bg-cover p-60 pt-10 leading-normal"
-      >
-        MAPS
-        <br />
-        GOES
-        <br />
-        HERE
+        <section class="m-2 rounded">
+          <h2
+            class="rounded bg-amber-800 p-1 text-center text-2xl font-semibold text-white"
+          >
+            Results
+          </h2>
+          <ul id="results">
+            <li>
+              <ul
+                class="mt-1 grid grid-cols-3 rounded bg-amber-500 p-2 text-center"
+              >
+                <li>Sugarfire</li>
+                <li>American</li>
+                <li>4.2/5</li>
+                <li>www.sugarfire.com</li>
+                <li>000-0000</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </div>
 
-      <section>
+      <section class="m-2 grow rounded bg-amber-500">
         <div>MAP GOES HERE</div>
-        master
       </section>
     </main>
 
