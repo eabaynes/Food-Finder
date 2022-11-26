@@ -19,6 +19,7 @@ document
     const mapData = await mapsApiService.getCoords(citySearched);
 
     renderService.renderResults(yelpData);
+    renderService.renderYelp(yelpData);
 
     function initMap() {
       map = new google.maps.Map(document.getElementById("map"), {
