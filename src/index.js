@@ -12,9 +12,15 @@ document
     const yelpData = await yelpApiService.getRestaurants(citySearched);
     console.log(yelpData);
 
+    const coordinates = yelpData.region.center;
+
+    localStorage.setItem(citySearched, JSON.stringify(coordinates));
+    localStorage.setItem("history", citySearched);
+
     // display restaurant info in list
     renderService.renderResults(yelpData);
     renderService.renderYelp(yelpData);
+    // renderService.renderHistory();
 
     function initMap() {
       const map = new google.maps.Map(document.getElementById("map"), {
@@ -40,3 +46,9 @@ document
 
     initMap();
   });
+
+function initPage() {
+  renderService.renderHistory();
+}
+
+initPage();

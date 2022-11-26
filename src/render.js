@@ -52,4 +52,20 @@ export default {
         bizRating;
     }
   },
+
+  // make button from local storage history
+  renderHistory(citySearched) {
+    const historyEl = document.getElementById("history");
+
+    const historyFragment = document.createDocumentFragment();
+
+    const historyList = historyFragment.appendChild(
+      document.createElement("button")
+    );
+    historyList.textContent = localStorage.getItem("history");
+
+    historyEl.setAttribute("class", "rounded bg-amber-500 text-center");
+
+    historyEl.appendChild(historyFragment);
+  },
 };
