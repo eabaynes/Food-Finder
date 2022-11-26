@@ -1,5 +1,3 @@
-// TODO All commented code can be uncommented as the other services 'go live'. right now they will just produce errors
-import mapsApiService from "./maps.api.service";
 import renderService from "./render";
 import yelpApiService from "./yelp.api.service";
 
@@ -13,9 +11,6 @@ document
     // get list of restaurants based on searched city
     const yelpData = await yelpApiService.getRestaurants(citySearched);
     console.log(yelpData);
-
-    // get coordinates of searched city to init map
-    const mapData = await mapsApiService.getCoords(citySearched);
 
     // display restaurant info in list
     renderService.renderResults(yelpData);
