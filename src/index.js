@@ -12,8 +12,6 @@ document
 
     const citySearched = event.target.city.value;
 
-    // localStorage.setItem(saveKey, saveValue);
-    // console.log(localStorage);
     const yelpData = await yelpApiService.getRestaurants(citySearched);
     console.log(yelpData);
 
@@ -31,10 +29,3 @@ document
 
     initMap();
   });
-// citySearched -> into yelpApiService
-// citySearched -> into mapsApiService
-// run yelpApi -> into renderService
-// run mapsApi -> into renderService
-//   local storage: save the location searched using the input as the key and value
-// document.ready: iterate over localstorage keys. generate button for each key with a text value = saveValue
-// on button click, run function = form.submit using text value as the citySearched
