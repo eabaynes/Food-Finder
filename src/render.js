@@ -1,9 +1,9 @@
-// todo: function to create Li and nested UL
 // varaible from element with id of "results"
 const resultsList = document.querySelector("#results");
 
+// exported functions for the index.js
 export default {
-  // function to render results from yelpAPI to page
+  // function to iterate through yelp response and create HTML fragments for each business
   renderResults(yelpData) {
     // iterate over returned results from yelp and make nested unordered list
     for (let i = 0; i < yelpData.businesses.length; i++) {
@@ -24,20 +24,24 @@ export default {
       resultsList.appendChild(listFragment);
     }
   },
+  // function to retrieve data pieces from yelp Data and create list items in renderResults generated fragments
   renderYelp(yelpData) {
+    // retrieve newly created HTML by class
     const newULs = document.getElementsByClassName("grid");
 
+    // iterate through the selected HTML
     for (let i = 0; i < newULs.length; i++) {
+      // variable to retrieve business name
       const bizName = yelpData.businesses[i].name;
-
+      // variable to retrieve business price range
       const bizPrice = yelpData.businesses[i].price;
-
+      // variable to retrieve business phone number
       const bizPhone = yelpData.businesses[i].display_phone;
-
+      // variable to retrieve primary cuisine type
       const bizType = yelpData.businesses[i].categories[0].title;
-
+      // variable to retrieve business rating
       const bizRating = yelpData.businesses[i].rating;
-
+      // For each above variable, generate new list element and add text content
       newULs[i].appendChild(document.createElement("li")).textContent = bizName;
       newULs[i].appendChild(document.createElement("li")).textContent =
         bizPrice;
