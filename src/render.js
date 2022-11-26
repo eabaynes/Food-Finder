@@ -24,4 +24,28 @@ export default {
       resultsList.appendChild(listFragment);
     }
   },
+  renderYelp(yelpData) {
+    const newULs = document.getElementsByClassName("grid");
+
+    for (let i = 0; i < newULs.length; i++) {
+      const bizName = yelpData.businesses[i].name;
+
+      const bizPrice = yelpData.businesses[i].price;
+
+      const bizPhone = yelpData.businesses[i].display_phone;
+
+      const bizType = yelpData.businesses[i].categories[0].title;
+
+      const bizRating = yelpData.businesses[i].rating;
+
+      newULs[i].appendChild(document.createElement("li")).textContent = bizName;
+      newULs[i].appendChild(document.createElement("li")).textContent =
+        bizPrice;
+      newULs[i].appendChild(document.createElement("li")).textContent =
+        bizPhone;
+      newULs[i].appendChild(document.createElement("li")).textContent = bizType;
+      newULs[i].appendChild(document.createElement("li")).textContent =
+        bizRating;
+    }
+  },
 };
