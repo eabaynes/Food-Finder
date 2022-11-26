@@ -1,5 +1,6 @@
 // TODO All commented code can be uncommented as the other services 'go live'. right now they will just produce errors
 import mapsApiService from "./maps.api.service";
+import renderService from "./render";
 import yelpApiService from "./yelp.api.service";
 
 // const mapsAPI = import.meta.env.VITE_googleAPI;
@@ -16,6 +17,8 @@ document
     console.log(yelpData);
 
     const mapData = await mapsApiService.getCoords(citySearched);
+
+    renderService.renderResults(yelpData);
 
     function initMap() {
       map = new google.maps.Map(document.getElementById("map"), {
