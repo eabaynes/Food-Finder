@@ -22,13 +22,24 @@ document
     renderService.renderYelp(yelpData);
 
     function initMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
+      const map = new google.maps.Map(document.getElementById("map"), {
         center: {
           lat: mapData.results[0].geometry.location.lat,
           lng: mapData.results[0].geometry.location.lng,
         },
-        zoom: 15,
+        zoom: 12,
       });
+
+      for (let i = 0; i < yelpData.businesses.length; i++) {
+        const marker = new google.maps.Marker({
+          position: {
+            lat: yelpData.businesses[i].coordinates.latitude,
+            lng: yelpData.businesses[i].coordinates.longitude,
+          },
+          map,
+          title: yelpData.businesses[i].name,
+        });
+      }
     }
 
     initMap();
