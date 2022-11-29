@@ -18,7 +18,7 @@ export default {
       // add CSS classes for tailwind to created UL
       nestedList.setAttribute(
         "class",
-        "mt-1 rounded grid grid-cols-2 flex-wrap justify-items-center bg-amber-500 p-2"
+        "m-1 rounded grid grid-cols-2 flex-wrap border-2 border-solid border-black bg-amber-500 p-2"
       );
       // append the generated fragment to the document
       resultsList.appendChild(listFragment);
@@ -27,7 +27,7 @@ export default {
   // function to retrieve data pieces from yelp Data and create list items in renderResults generated fragments
   renderYelp(yelpData) {
     // retrieve newly created HTML by class
-    const newULs = document.getElementsByClassName("mt-1");
+    const newULs = document.getElementsByClassName("grid");
     // iterate through the selected HTML
     for (let i = 0; i < newULs.length; i++) {
       // variable to retrieve business name
@@ -44,14 +44,16 @@ export default {
       newULs[i].appendChild(
         Object.assign(
           document.createElement("li"),
-          { className: "font-bold col-span-2 " },
+          { className: "font-bold cols-span-2" },
           { textContent: bizName }
         )
       );
       newULs[i].appendChild(
-        Object.assign(document.createElement("li"), {
-          textContent: "Cuisine: " + bizType,
-        })
+        Object.assign(
+          document.createElement("li"),
+          { className: "text-xs row-start-2" },
+          { textContent: bizType }
+        )
       );
       newULs[i].appendChild(
         Object.assign(
@@ -63,7 +65,7 @@ export default {
       newULs[i].appendChild(
         Object.assign(
           document.createElement("li"),
-          { className: "text-white font-semibold" },
+          { className: "text-white font-semibold row-start-3" },
           { textContent: bizPhone }
         )
       );
@@ -77,6 +79,7 @@ export default {
 
   // make button from local storage history
   renderHistory(citySearched) {
+    // create variable from HTML element with the id"history"
     const historyEl = document.getElementById("history");
 
     const historyFragment = document.createDocumentFragment();
@@ -86,7 +89,10 @@ export default {
     );
     historyList.textContent = localStorage.getItem("history");
 
-    historyEl.setAttribute("class", "rounded bg-amber-500 text-center");
+    historyEl.setAttribute(
+      "class",
+      "m-1 rounded bg-amber-500 border-2 font-semibold border-solid border-black text-center hover:bg-yellow-600"
+    );
 
     historyEl.appendChild(historyFragment);
   },
