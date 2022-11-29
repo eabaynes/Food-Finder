@@ -18,7 +18,7 @@ export default {
       // add CSS classes for tailwind to created UL
       nestedList.setAttribute(
         "class",
-        "m-1 rounded grid grid-cols-2 flex-wrap border-2 border-solid border-black bg-amber-500 p-2"
+        "m-1 rounded grid grid-cols-2 justify-center justify-items-center flex-wrap border-2 border-solid border-black bg-amber-500 p-2"
       );
       // append the generated fragment to the document
       resultsList.appendChild(listFragment);
@@ -34,44 +34,70 @@ export default {
       const bizName = yelpData.businesses[i].name;
       // variable to retrieve business price range
       const bizPrice = yelpData.businesses[i].price;
-      // variable to retrieve business phone number
+      // variable to retrieve the unformatted phone number
+      const urlPhone = yelpData.businesses[i].phone;
+      // variable to retrieve business phone number in a local display format
       const bizPhone = yelpData.businesses[i].display_phone;
       // variable to retrieve primary cuisine type
       const bizType = yelpData.businesses[i].categories[0].title;
       // variable to retrieve business rating
       const bizRating = yelpData.businesses[i].rating;
-      // For each above variable, generate new list element, add classes, and add text content
+      // Variable to retrieve business's yelp page
+      const bizPage = yelpData.businesses[i].url;
+      // Create an HTML fragment
+      const linkFragment = document.createDocumentFragment();
+      // Fragment to be created for the business page
+      const yelpLink = linkFragment
+        .appendChild(document.createElement("h3"))
+        .appendChild(document.createElement("a"));
+      // Fragment to be created for the business page
+      const phoneLink = linkFragment
+        .appendChild(document.createElement("li"))
+        .appendChild(document.createElement("a"));
+
+      // create a clickable business name that will take a user to a business's yelp page
       newULs[i].appendChild(
         Object.assign(
-          document.createElement("li"),
-          { className: "font-bold cols-span-2" },
+          yelpLink,
+          { href: bizPage },
+          { target: "_blank" },
+          {
+            className:
+              "col-span-2 underline decoration-double font-bold hover:text-white",
+          },
           { textContent: bizName }
         )
       );
+      // append the cuisine type to the page
       newULs[i].appendChild(
         Object.assign(
           document.createElement("li"),
-          { className: "text-xs row-start-2" },
+          { className: "row-start-2" },
           { textContent: bizType }
         )
       );
+      // append the price range to the page
       newULs[i].appendChild(
-        Object.assign(
-          document.createElement("li"),
-          { className: "font-semibold" },
-          { textContent: bizPrice }
-        )
+        Object.assign(document.createElement("li"), {
+          textContent: "Price Range: " + bizPrice,
+        })
       );
+      // Create nested url that will allow users to make a call straight from the web application.
       newULs[i].appendChild(
         Object.assign(
-          document.createElement("li"),
-          { className: "text-white font-semibold row-start-3" },
+          phoneLink,
+          { href: "tel:" + urlPhone },
+          {
+            className:
+              "text-white font-medium row-start-3 underline hover:text-black",
+          },
           { textContent: bizPhone }
         )
       );
+      // append the business's rating to the page
       newULs[i].appendChild(
         Object.assign(document.createElement("li"), {
-          textContent: bizRating + " /5",
+          textContent: "Rating: " + bizRating + " /5",
         })
       );
     }
