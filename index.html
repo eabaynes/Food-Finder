@@ -23,7 +23,7 @@
               <label
                 for="search"
                 class="text-center text-2xl font-semibold text-white"
-                >Find Delivery!</label
+                >Find Delivery Near You!</label
               >
               <input type="text" id="city" class="m-1 rounded bg-orange-200" />
               <button
@@ -49,12 +49,16 @@
           >
             Results
           </h2>
+          <h3 class="m-1 rounded text-sm font-semibold">
+            Click on a restaurant name to visit their Yelp page, or on their
+            phone number to call them!
+          </h3>
           <ul id="results"></ul>
         </section>
       </div>
 
       <section
-        class="sticky top-10 right-3 my-2 h-4/5 rounded bg-amber-500 p-3"
+        class="sticky top-20 right-3 my-3 h-4/5 rounded bg-amber-500 p-3"
       >
         <div id="map"></div>
       </section>
