@@ -78,11 +78,9 @@ export default {
       );
       // append the price range to the page
       newULs[i].appendChild(
-        Object.assign(
-          document.createElement("li"),
-          { className: "font-semibold" },
-          { textContent: bizPrice }
-        )
+        Object.assign(document.createElement("li"), {
+          textContent: "Price Range: " + bizPrice,
+        })
       );
       // Create nested url that will allow users to make a call straight from the web application.
       newULs[i].appendChild(
@@ -91,14 +89,15 @@ export default {
           { href: "tel:" + urlPhone },
           {
             className:
-              "text-white font-semibold row-start-3 underline hover:text-black",
+              "text-white font-medium row-start-3 underline hover:text-black",
           },
           { textContent: bizPhone }
         )
       );
+      // append the business's rating to the page
       newULs[i].appendChild(
         Object.assign(document.createElement("li"), {
-          textContent: bizRating + " /5",
+          textContent: "Rating: " + bizRating + " /5",
         })
       );
     }
