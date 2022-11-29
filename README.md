@@ -1,9 +1,22 @@
-# Vite + TailwindCSS (no framework)
+# Food Finder
 
-`npm start` will...start the `localhost:3000` server.
+## Description
 
-There is some opinionated/standard stuff included for ESLint and Prettier. These are wired up to do some automatic things in VS Code via [`settings.json`](./.vscode/settings.json). For example, as soon as you leave the file it will auto save, format and even fix linting stuff for you. If that's too much, you may want to reconfigure it.
+Food finder is a simple way to find restaurants that offer delivery near you! The application will display restaunt names, cuisine type, price range, rating, and phone number to find the perfect quick meal solution.
 
-Finally, there are a few [recommended extensions](./.vscode/extensions.json). You'll probably want these.
+As our first group project, we learned how to use branches to work on multiple issues as a team.
 
-Hope it helps. Give it a ⭐, will ya? 🤓
+## Usage
+
+First, type your location into the search bar. This can be an address or city. The user's previous search will be saved under "Pick up where you left off" for easy access. Restaurant info will appear in the sidebar and a map with location pins will populate.
+
+![Food finder webpage](./assets/images/Food-Finder-Mock-Up.png)
+
+The webpage can be viewed at \***\* PUT LINK HERE \*\***
+
+## Credits
+
+- [Elliot Baynes](https://github.com/eabaynes)
+- [Zana Bolleke](https://github.com/zana-git)
+- [Tony Dandino](https://github.com/tdandino1005)
+- [Ellie Walsch](https://github.com/EllieWalsch)
