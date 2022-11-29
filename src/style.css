@@ -6,3 +6,34 @@
   height: 500px;
   width: 675px;
 }
+
+@media screen and (max-width: 950px) {
+  #map {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  #map {
+    height: 800px;
+    width: 900px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  #map {
+    height: 900px;
+    width: 1050px;
+  }
+}
+@media screen and (min-width: 2100px) {
+  #map {
+    height: 1000px;
+    width: 1200px;
+  }
+}
+@media screen and (min-width: 2500px) {
+  #map {
+    height: 1100px;
+    width: 1700px;
+  }
+}
